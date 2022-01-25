@@ -1,0 +1,972 @@
+/*
+FONTS
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/*
+RESETERS
+*/
+
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/*
+APP BACKGROUNDS
+*/
+
+.Home {
+	background: url("../../public/Images/Home\ Background.jpg");
+	background-size: cover;
+	background-position: center;
+	min-height: 100vh;
+}
+
+.Login {
+	background: linear-gradient(280.17deg, #004471 33.68%, #464343 65.41%);
+	min-height: 100vh;
+}
+
+.Register {
+	background: linear-gradient(280.17deg, #004471 33.68%, #464343 65.41%);
+	min-height: 100vh;
+}
+
+.Profile {
+	background: linear-gradient(280.17deg, #004471 33.68%, #464343 65.41%);
+	min-height: 100vh;
+}
+
+.Edit {
+	background: linear-gradient(280.17deg, #004471 33.68%, #464343 65.41%);
+	min-height: 100vh;
+}
+
+.Campgrounds {
+	background: linear-gradient(280.17deg, #004471 33.68%, #464343 65.41%);
+	min-height: 100vh;
+}
+
+#NotFound {
+	background: linear-gradient(280.17deg, #004471 33.68%, #464343 65.41%);
+	min-height: 100vh;
+}
+
+/*
+NAVBAR
+*/
+
+.Navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	min-height: 8rem;
+	width: 100%;
+	padding: 0 15px;
+	color: #fff;
+	transition: background-color 0.2s ease-in-out;
+	z-index: 100;
+}
+
+.Navbar #Logo {
+	font-size: 3rem;
+}
+
+/*COLOR CHANGE ON SCROLL*/
+
+.ColorChange {
+	transition: all 0.2s ease-in-out;
+	background-color: #27343d;
+}
+
+/*NAVBAR MENU*/
+
+.Navbar #NavMenu {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	list-style: none;
+	max-height: 8rem;
+}
+
+.Navbar #NavMenu li {
+	padding: 15px;
+	font-size: 2.5rem;
+}
+
+.Navbar #NavMenu #UserImg {
+	background-size: cover !important;
+	background-position: center !important;
+	border-radius: 50%;
+	width: 5rem;
+	height: 5rem;
+}
+
+/*NAVBAR MENU ITEMS*/
+
+.Navbar #NavMenu #Register,
+.Navbar #NavMenu #Login {
+	font-size: 2.5rem;
+	padding: 5px 10px;
+	color: #161616;
+	background: #fff;
+	border-radius: 15px;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+/*NAVBAR MENU ITEMS HOVER*/
+
+.Navbar #NavMenu #Register:hover,
+.Navbar #NavMenu #Login:hover {
+	color: #fff;
+	background-color: #161616;
+	transition: all 0.2s ease-in-out;
+}
+
+/*MENU*/
+
+.Navbar #NavMenu .MenuContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	height: 77px;
+}
+
+.Navbar #NavMenu .Menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	background: #fff;
+	border-radius: 15px;
+	color: #000;
+	min-height: 4.5rem;
+	margin-right: 10px;
+	padding: 0;
+	float: left;
+	position: relative;
+	overflow: hidden;
+	transition: min-height 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.Navbar #NavMenu .MenuOpen {
+	align-items: flex-start;
+	min-height: 17rem;
+	box-shadow: 0 5px 0 0 #000; /* Border bottom */
+	transition: min-height 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.Navbar #NavMenu .Menu button {
+	/*To Replace with icon*/
+	background: none;
+	border: none;
+	padding-left: 5px;
+	font-size: 2rem;
+	cursor: pointer;
+}
+
+/*TOP MENU*/
+
+.Navbar #NavMenu .MenuOpen .TopMenu {
+	position: relative;
+}
+
+.Navbar #NavMenu .Menu .TopMenu::after {
+	content: "";
+	position: absolute;
+	width: 0;
+	min-height: 3px;
+	background-color: #000;
+	bottom: -5px;
+	left: 0;
+	transition: width 0.5s ease-in-out;
+}
+
+.Navbar #NavMenu .MenuOpen .TopMenu::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	min-height: 3px;
+	background-color: #000;
+	bottom: 0;
+	left: 0;
+	transition: width 0.5s ease-in-out;
+}
+
+.Navbar #NavMenu .Menu .TopMenu {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	min-height: 4.7rem;
+	float: left;
+	padding: 0 10px;
+}
+
+.Navbar #NavMenu .Menu .TopMenu p {
+	padding-right: 15px;
+}
+
+/*BOTTOM MENU*/
+
+.Navbar #NavMenu .Menu .BottomMenu {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	width: 100%;
+	height: 12.5rem;
+	position: absolute;
+	left: -100px;
+	bottom: -4px;
+	color: #000;
+}
+
+.Navbar #NavMenu .MenuOpen .BottomMenu {
+	display: flex;
+	flex-direction: column;
+	color: #000;
+	width: 100%;
+	align-items: flex-start;
+	position: absolute;
+	left: 0;
+	padding-left: 12px;
+	transition: left 0.5s ease-in-out 0.5s;
+}
+
+.Navbar #NavMenu .Menu .BottomMenu a {
+	color: #000;
+}
+
+/*UNDERLINE*/
+
+.Navbar #NavMenu .Underline {
+	position: relative;
+}
+
+.Navbar #NavMenu .Underline::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	min-height: 3px;
+	background-color: #fff;
+	bottom: -5px;
+	left: 0;
+}
+
+.Navbar #NavMenu .UnderlineMenu {
+	position: relative;
+}
+
+.Navbar #NavMenu .UnderlineMenu::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	min-height: 3px;
+	background-color: #000;
+	bottom: 0;
+	left: 0;
+}
+
+/*
+HOME
+*/
+
+/*#HomeCard*/
+
+#HomeCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 84.8rem;
+	padding-top: 80px;
+	color: #fff;
+}
+
+/*HOMECARD ELEMENTS*/
+
+#HomeCard h1,
+#HomeCard p,
+#HomeCard .button {
+	margin: 3px 0;
+}
+
+#HomeCard h1 {
+	font-size: 3rem;
+}
+
+#HomeCard p {
+	font-size: 1.7rem;
+}
+
+/*HOMECARD BUTTON*/
+
+#HomeCard .button {
+	font-size: 2.5rem;
+	padding: 8px 10px;
+	color: #161616;
+	background: #fff;
+	border-radius: 15px;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+#HomeCard .button:hover {
+	color: #fff;
+	background-color: #161616;
+	transition: all 0.2s ease-in-out;
+}
+
+/*
+LOGIN
+*/
+
+/*LOGIN CARD*/
+
+#LoginPage {
+	padding-top: 80px;
+	min-height: 84.8rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#LoginCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 70rem;
+	min-width: 80rem;
+	margin: auto;
+	background: #fff;
+	border-radius: 15px;
+	color: #000;
+	position: relative;
+	overflow: hidden;
+}
+#LoginCard h2 {
+	font-size: 3.5rem;
+	color: #000;
+}
+
+/*LOGIN ALERTS*/
+
+#LoginCard .Alerts,
+#RegisterCard .Alerts {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	position: absolute;
+	background-color: #e7406a;
+	border-radius: 0 15px 15px 0;
+	width: 20rem;
+	height: 5rem;
+	top: 50px;
+	left: -20rem;
+	transition: left 0.5s ease-in-out;
+}
+
+#LoginCard .AlertsOpen,
+#RegisterCard .AlertsOpen {
+	left: 0;
+	transition: left 0.5s ease-in-out;
+}
+
+#LoginCard .Alerts p,
+#RegisterCard .Alerts p {
+	font-size: 1.5rem;
+}
+
+#LoginCard .Alerts svg,
+#RegisterCard .Alerts svg {
+	cursor: pointer;
+}
+/*LOGIN FORM*/
+
+#LoginCard form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+	padding: 0 100px;
+	margin-left: 5px;
+}
+
+#LoginCard form input {
+	padding: 25px 10px;
+	border: #000 solid 2px;
+	border-radius: 15px;
+	width: 100%;
+	height: 3rem;
+	margin: 5px 0;
+}
+
+#LoginCard form label {
+	font-size: 2.5rem;
+}
+
+/*LOGIN BUTTON*/
+
+#LoginCard button {
+	font-size: 2.5rem;
+	padding: 8px 10px;
+	color: #161616;
+	background: #0099ff;
+	border-radius: 15px;
+	border: solid #000 2px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+#LoginCard button:hover {
+	color: #fff;
+	background-color: #161616;
+	transition: all 0.2s ease-in-out;
+}
+
+/*
+REGISTER
+*/
+
+/*REGISTER CARD*/
+
+#RegisterPage {
+	padding-top: 80px;
+	min-height: 84.8rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#RegisterCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 70rem;
+	min-width: 80rem;
+	margin: auto;
+	background: #fff;
+	border-radius: 15px;
+	color: #000;
+	position: relative;
+	overflow: hidden;
+}
+
+#RegisterCard h2 {
+	font-size: 3.5rem;
+	color: #000;
+}
+
+/*REGISTER FORM*/
+
+#RegisterCard form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+	padding: 0 100px;
+	margin-left: 5px;
+}
+
+#RegisterCard form input {
+	padding: 25px 10px;
+	border: #000 solid 2px;
+	border-radius: 15px;
+	width: 100%;
+	height: 3rem;
+	margin: 5px 0;
+}
+
+#RegisterCard form label {
+	font-size: 2.5rem;
+}
+
+/*REGISTER BUTTON*/
+
+#RegisterCard button {
+	font-size: 2.5rem;
+	padding: 8px 10px;
+	color: #161616;
+	background: #0099ff;
+	border-radius: 15px;
+	border: solid #000 2px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+#RegisterCard button:hover {
+	color: #fff;
+	background-color: #161616;
+	transition: all 0.2s ease-in-out;
+}
+
+/*
+PORFILE CARD
+*/
+
+#ProfileCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 84.8rem;
+	padding-top: 80px;
+	color: #fff;
+}
+
+/*PROFILE*/
+
+#Profile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 90%;
+	max-width: 90%;
+	min-height: 72rem;
+	background: #fff;
+	color: #000;
+	font-size: 2.5rem;
+	border-radius: 15px;
+	position: relative;
+	overflow: hidden;
+}
+
+#ProfileCard #Profile #Title {
+	align-self: flex-start;
+	margin-left: 25px;
+}
+
+/*PROFILE SEPARATOR*/
+
+#ProfileCard #Profile #Separator {
+	width: 65rem;
+	min-height: 1rem;
+	background: #000;
+	border-radius: 15px;
+}
+
+/*PROFILE CAMPGROUNDS*/
+
+#ProfileCard #Profile #Campgrounds {
+	border: solid 1px #000;
+	min-height: 55rem;
+	width: 170rem;
+	max-width: 170rem;
+}
+
+/*
+EDIT CARD
+*/
+
+#EditCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: 84.8rem;
+	padding-top: 80px;
+	color: #fff;
+}
+
+/*EDIT*/
+
+#EditCard #Edit {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 90%;
+	max-width: 90%;
+	min-height: 72rem;
+	background: #fff;
+	color: #000;
+	font-size: 2.5rem;
+	border-radius: 15px;
+	position: relative;
+	overflow: hidden;
+}
+
+/*EDIT CARD ALERT*/
+
+#EditCard #Edit .Alerts {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	position: absolute;
+	background-color: #e7406a;
+	border-radius: 0 15px 15px 0;
+	height: 5rem;
+	top: 50px;
+	left: -20rem;
+	transition: left 0.5s ease-in-out;
+}
+
+#EditCard #Edit .AlertsOpen {
+	left: 0;
+	transition: left 0.5s ease-in-out;
+}
+
+#EditCard #Edit .Alerts p {
+	font-size: 1.5rem;
+	margin-left: 18px;
+}
+
+#EditCard #Edit .Alerts svg {
+	font-size: 2rem;
+	cursor: pointer;
+	margin-left: 18px;
+	margin-right: 18px;
+}
+
+/*EDIT CARD SUCCESS*/
+
+#EditCard #Edit .Success {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	position: absolute;
+	background-color: #46e740;
+	border-radius: 0 15px 15px 0;
+	height: 5rem;
+	top: 50px;
+	left: -20rem;
+	transition: left 0.5s ease-in-out;
+}
+
+#EditCard #Edit .SuccessOpen {
+	left: 0;
+	transition: left 0.5s ease-in-out;
+}
+
+#EditCard #Edit .Success p {
+	font-size: 1.5rem;
+	margin-left: 18px;
+}
+
+#EditCard #Edit .Success svg {
+	font-size: 2rem;
+	cursor: pointer;
+	margin-left: 18px;
+	margin-right: 18px;
+}
+
+/*DETAILS*/
+
+#EditCard #Edit #Details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	min-height: 65rem;
+	width: 49%;
+	max-width: 49%;
+}
+
+/*IMG CARD*/
+
+#EditCard #Edit #Details #ImgCard {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: 100%;
+}
+
+#EditCard #Edit #Details #ImgCard #Img {
+	background-size: cover !important;
+	background-position: center !important;
+	width: 25rem;
+	height: 25rem;
+	border-radius: 50%;
+}
+
+#EditCard #Edit #Details #ImgCard #AddImg {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 100%;
+	min-width: 50%;
+	margin-top: 10px;
+}
+
+/*UPLOAD INPUT*/
+
+#EditCard #Edit #Details #ImgCard #AddImg input {
+	width: 20rem;
+	min-width: 20rem;
+}
+
+#EditCard #Edit #Details #ImgCard #AddImg input::file-selector-button {
+	font-size: 2.5rem;
+	padding: 8px 10px;
+	color: #161616;
+	background: #0099ff;
+	border-radius: 15px;
+	border: solid #000 2px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	font-size: 1.5rem;
+}
+
+#EditCard #Edit #Details #ImgCard #AddImg input::file-selector-button:hover {
+	color: #fff;
+	background-color: #161616;
+	transition: all 0.2s ease-in-out;
+}
+
+/*UPLOAD BUTTON*/
+
+#EditCard #Edit #Details #ImgCard #AddImg #Uploadbtn {
+	font-size: 2.5rem;
+	padding: 8px 10px;
+	color: #161616;
+	background: #0099ff;
+	border-radius: 15px;
+	border: solid #000 2px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	font-size: 1.5rem;
+}
+
+#EditCard #Edit #Details #ImgCard #AddImg #Uploadbtn:hover {
+	color: #fff;
+	background-color: #161616;
+	transition: all 0.2s ease-in-out;
+}
+
+/*DETAILS FORM*/
+
+#EditCard #Edit #Details #Form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+	padding: 0 7px 0 35px;
+	margin-left: 5px;
+}
+
+#EditCard #Edit #Details #Form input {
+	padding: 25px 10px;
+	border: #000 solid 2px;
+	border-radius: 15px;
+	width: 70%;
+	max-width: 70%;
+	height: 3rem;
+	margin: 5px 0;
+	font-size: 2rem;
+	margin-left: 15px;
+}
+
+#EditCard #Edit #Details #Form div {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	max-width: 100%;
+}
+
+#EditCard #Edit #Details #Form label {
+	font-size: 2.5rem;
+	width: 11rem;
+	max-width: 11rem;
+}
+
+/*DETAILS BUTTON*/
+
+#EditCard #Edit #Details button {
+	font-size: 2.5rem;
+	padding: 8px 10px;
+	color: #161616;
+	background: #0099ff;
+	border-radius: 15px;
+	border: solid #000 2px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+#EditCard #Edit #Details button:hover {
+	color: #fff;
+	background-color: #161616;
+	transition: all 0.2s ease-in-out;
+}
+
+/*PASSWORD*/
+
+#EditCard #Edit #Password {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	min-height: 65rem;
+	width: 49%;
+	max-width: 49%;
+}
+
+/*PASSWORD FORM*/
+
+#EditCard #Edit #Password #Form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-start;
+	width: 100%;
+	padding: 0 35px 0 35px;
+	margin-left: 5px;
+}
+
+#EditCard #Edit #Password #Form input {
+	padding: 25px 10px;
+	border: #000 solid 2px;
+	border-radius: 15px;
+	width: 70%;
+	max-width: 70%;
+	height: 3rem;
+	margin: 5px 0;
+	font-size: 2rem;
+	margin-left: 15px;
+}
+
+#EditCard #Edit #Password #Form div {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	max-width: 100%;
+}
+
+#EditCard #Edit #Password #Form label {
+	font-size: 2.5rem;
+	width: 22rem;
+	max-width: 22rem;
+}
+
+/*PASSWORD BUTTON*/
+
+#EditCard #Edit #Password button {
+	font-size: 2.5rem;
+	padding: 8px 10px;
+	color: #161616;
+	background: #0099ff;
+	border-radius: 15px;
+	border: solid #000 2px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+#EditCard #Edit #Password button:hover {
+	color: #fff;
+	background-color: #161616;
+	transition: all 0.2s ease-in-out;
+}
+
+/*EDIT SEPARATOR*/
+
+#EditCard #Edit #Separator {
+	width: 1rem;
+	min-height: 65rem;
+	background: #000;
+	border-radius: 15px;
+}
+
+/*
+CAMPGROUNDS
+*/
+
+/*CAMPGROUNDS CARD*/
+
+#CampgroundsPage {
+	padding-top: 80px;
+	min-height: 84.8rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	color: #fff;
+}
+
+#CampgroundsCard {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+}
+
+/*CAMPGROUNDS MAP*/
+
+#CampgroundsCard #Map {
+	background: url("../../public/Images/Map.png");
+	background-size: cover;
+	background-position: center;
+	width: 70%;
+	height: 55rem;
+}
+
+/*CAMPGROUNDS SEARCH*/
+
+#CampgroundsCard #CampgroundsSearch {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#CampgroundsCard #CampgroundsSearch h2 {
+	font-size: 3.5rem;
+	color: #fff;
+}
+
+#CampgroundsCard #CampgroundsSearch input {
+	padding: 25px 10px;
+	border: #000 solid 2px;
+	border-radius: 15px;
+	width: 50rem;
+	height: 3rem;
+	margin: 5px 0;
+}
+
+/*
+FOOTER
+*/
+
+footer {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+	min-height: 5.5rem;
+	background: #27343d;
+	position: absolute;
+}
+
+footer h3 {
+	padding-left: 15px;
+	color: #fff;
+	font-size: 1.5rem;
+}
